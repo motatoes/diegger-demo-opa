@@ -23,7 +23,7 @@ jobs:
           aws-region: us-east-1
           policy-check-enabled: true
           digger-cloud-token: xxxxxxxx
-          digger-cloud-hostname: cloud.uselemon.cloud
+          digger-cloud-hostname: https://cloud.uselemon.cloud
           
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
