@@ -15,15 +15,16 @@ jobs:
 
     steps:
       - name: digger run
-        uses: diggerhq/digger@feat/rbac-amends
+        uses: diggerhq/digger@feat/make-rbac-org-configurable-in-digger
         with:
           setup-aws: true
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
           policy-check-enabled: true
-          digger-cloud-token: xxxxxxxx
-          digger-cloud-hostname: https://cloud.uselemon.cloud
+          digger-token: ${{ secrets.DIGGER_TOKEN }}
+          digger-organisation: ${{ secrets.DIGGER_ORGANISATION }}
+          digger-hostname: https://cloud.uselemon.cloud
           
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
